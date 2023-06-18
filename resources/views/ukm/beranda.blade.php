@@ -1,8 +1,8 @@
 @extends('layouts.beranda')
 
 @section('navigation')
-  <div class="container d-flex justify-content-start align-items-center" style="height: 35rem">
-    <div class="row gx-5 gy-4">
+  <div class="container d-flex align-items-center" style="height: 35rem">
+    <div class="row g-4">
       <div class="col-4">
         <a href="/ukm" class="navigation bg-white d-flex align-items-center rounded-3 p-4">
           <div class="rounded-circle bg-sky p-4 me-3">

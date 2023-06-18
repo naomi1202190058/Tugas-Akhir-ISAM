@@ -2,7 +2,7 @@
 
 @section('header')
   <div class="col">
-    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Rapor  UKM (Telkom University Esports)</h3>
+    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Rapor  UKM (Telkom University E-Sports)</h3>
   </div>
 @endsection
 
@@ -12,7 +12,7 @@
       <tbody>
         <tr>
           <td>Nama Organisasi/UKM</td>
-          <td>: Telkom University Esports</td>
+          <td>: Telkom University E-Sports</td>
         </tr>
         <tr>
           <td>Kode Organisasi/UKM</td>
@@ -45,17 +45,18 @@
   </div>
 
   <div class="col bg-white rounded-top-5 min-vh-100 mt-2">
-    <form action="">
+    <form action="/rapor/rapor-detail/proker-detail" method="post">
+      @csrf
       <div class="row my-4 mx-1">
         <div class="col-3 text-center">
-          <img class="mt-2 me-4 rounded-4" src="/images/logo-ukm/telu-esport.png" alt="Gambar UKM" width="80%">
+          <img class="mt-2 me-4 rounded-4" src="/images/logo-ukm/telkom-university-esports.png" alt="Gambar UKM" width="80%">
         </div>
         <div class="col-9 mt-2 detail-proker">
           <div class="row g-0">
             <div class="col-8">
               <div class="mb-3">
                 <span class="mb-1 d-block text-3xs">Nama UKM</span>
-                <h6 class="text-2xs">Telkom University Esports</h6>
+                <h6 class="text-2xs">Telkom University E-Sports</h6>
               </div>
               <div class="mb-3">
                 <span class="mb-1 d-block text-3xs">Nama Kegiatan</span>
@@ -80,7 +81,7 @@
               <div class="mb-3">
                 <span class="mb-1 d-block text-3xs">Dokumen LPJ</span>
                 <div class="d-flex align-items-center">
-                  <a class="text-3xs me-5" href="" style="color: #93B8CD">DOC_LPJ Kegiatan 2</a>
+                  <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_LPJ Kegiatan 2</a>
                   <a class="btn status finished text-4xs" href="">
                     <img class="me-2" src="/images/icons/unduh.png" alt="Icon" width="18px">
                     Unduh Dokumen
@@ -106,8 +107,27 @@
       </div>
     </form>
   </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
 @endsection
 
 @section('myscript')
   <script src="/js/form-handler.js"></script>
+  <script>
+    const myModal = new bootstrap.Modal(document.getElementById('success'))
+    myModal.show()
+  </script>
 @endsection

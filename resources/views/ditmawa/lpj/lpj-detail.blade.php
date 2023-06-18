@@ -2,7 +2,7 @@
 
 @section('header')
   <div class="col">
-    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">LPJ UKM Teklom University Esports</h3>
+    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">LPJ UKM Teklom University E-Sports</h3>
   </div>
 @endsection
 
@@ -12,7 +12,7 @@
       <tbody>
         <tr>
           <td>Nama Organisasi/UKM</td>
-          <td>: Telkom University Esports</td>
+          <td>: Telkom University E-Sports</td>
         </tr>
         <tr>
           <td>Kode Organisasi/UKM</td>
@@ -51,8 +51,7 @@
           <th class="pt-4" style="width: 30%">Nama Kegiatan</th>
           <th class="pt-4" style="width: 25%">Deadline Pengumpulan</th>
           <th class="pt-4">Dokumen LPJ</th>
-          <th class="pt-4" style="width: 17%">Review</th>
-          <th class="pt-4" style="width: 5%">Aksi</th>
+          <th class="pt-4">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -67,12 +66,6 @@
               <img class="me-1" src="/images/icons/file.svg" alt="Icon" width="12px">
               <span class="text-3xs" style="color: #7b7a7a">DOC_LPJ Kegiatan 1</span>
             </div>
-          </td>
-          <td>
-            <button type="button" class="btn text-white text-3xs status review">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
           </td>
           <td>
             <button type="button" class="btn text-white text-3xs status aksi" data-bs-toggle="modal" data-bs-target="#aksiModal">
@@ -94,12 +87,6 @@
             </div>
           </td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
-          </td>
-          <td>
             <button type="button" class="btn text-white text-3xs status aksi" data-bs-toggle="modal" data-bs-target="#aksiModal">
               <img class="me-2" src="/images/icons/status/aksi.png" alt="Icon" width="20px">
               Aksi
@@ -116,7 +103,8 @@
         <button type="button" class="btn-close position-absolute z-3 shadow-none" data-bs-dismiss="modal"></button>
         <div class="modal-body mt-4 mb-2 mx-2">
           <div>
-            <form action="" method="post">
+            <form action="/lpj/lpj-detail" method="post">
+              @csrf
               <div class="row">
                 <div class="col-10 mb-3">
                   <label for="aksi" class="form-label fw-medium">Aksi</label>
@@ -141,8 +129,27 @@
       </div>
     </div>
   </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
 @endsection
 
 @section('myscript')
   <script src="/js/form-handler.js"></script>
+  <script>
+    const myModal = new bootstrap.Modal(document.getElementById('success'))
+    myModal.show()
+  </script>
 @endsection

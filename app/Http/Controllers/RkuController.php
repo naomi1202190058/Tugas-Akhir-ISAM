@@ -73,4 +73,12 @@ class RkuController extends Controller
     public function declined() {
         return view("ditmawa.rku.declined");
     }
+
+    public function postRkuUkm() {
+        return redirect("/rku")->with("success", "Rencana kegiatan berhasil diajukan");
+    }
+
+    public function postRkuDitmawa() {
+        return redirect("/rku/waiting")->with("success", "Status RKU berhasil diubah");
+    }
 }

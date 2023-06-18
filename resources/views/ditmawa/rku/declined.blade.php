@@ -1,10 +1,10 @@
 @extends('layouts.tertiary')
 
 @section('header')
-  <div class="col">
+  <div class="col-6">
     <h3 class="pt-4 pb-3 fw-semibold">Rencana Kegiatan UKM</h3>
   </div>
-  <div class="col-2 text-end">
+  <div class="col-6 text-end">
     <button type="button" class="btn border-0 text-white" style="background-color: #58CAF4" data-bs-toggle="modal" data-bs-target="#statistikModal"><img class="me-2" src="/images/icons/statistik.png" alt="Icon" width="18px">Lihat Statistik</button>
   </div>
 @endsection
@@ -25,48 +25,39 @@
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review" data-bs-toggle="modal" data-bs-target="#detailModal">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
+            <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 1</a>
           </td>
           <td>
-            <div class="text-white text-3xs status ditolak">
+            <button type="button" class="btn text-white text-3xs status ditolak" data-bs-toggle="modal" data-bs-target="#statusModal">
               <img class="me-2" src="/images/icons/status/ditolak.png" alt="Icon" width="20px">
               Ditolak
-            </div>
+            </button>
           </td>
         </tr>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review" data-bs-toggle="modal" data-bs-target="#detailModal">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
+            <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 2</a>
           </td>
           <td>
-            <div class="text-white text-3xs status ditolak">
+            <button type="button" class="btn text-white text-3xs status ditolak" data-bs-toggle="modal" data-bs-target="#statusModal">
               <img class="me-2" src="/images/icons/status/ditolak.png" alt="Icon" width="20px">
               Ditolak
-            </div>
+            </button>
           </td>
         </tr>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review" data-bs-toggle="modal" data-bs-target="#detailModal">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
+            <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 3</a>
           </td>
           <td>
-            <div class="text-white text-3xs status ditolak">
+            <button type="button" class="btn text-white text-3xs status ditolak" data-bs-toggle="modal" data-bs-target="#statusModal">
               <img class="me-2" src="/images/icons/status/ditolak.png" alt="Icon" width="20px">
               Ditolak
-            </div>
+            </button>
           </td>
         </tr>
       </tbody>
@@ -176,6 +167,20 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{-- Modal Status --}}
+  <div class="modal fade" id="statusModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content position-relative rounded-4">
+        <button type="button" class="btn-close position-absolute z-3 shadow-none" data-bs-dismiss="modal"></button>
+        <div class="modal-body d-flex align-items-center justify-content-center" style="min-height: 13rem">
+          <div class="text-center mt-3">
+            <span class="d-block mb-4">Tidak ada feedback</span>
           </div>
         </div>
       </div>

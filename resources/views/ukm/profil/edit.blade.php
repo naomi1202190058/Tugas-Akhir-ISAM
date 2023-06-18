@@ -11,7 +11,8 @@
 
 @section('content')
   <div class="mx-4 my-5">
-    <form action="">
+    <form action="/profile/edit" method="post">
+      @csrf
       <div class="col-12 mb-4 d-flex align-items-center">
         <img class="rounded-3 me-5 img-preview" src="/images/rku-image.png" alt="Gambar RKU"  >
         <div class="me-3 d-none status finished">

@@ -17,4 +17,12 @@ class LpjController extends Controller
     public function lpjDetail() {
         return view("ditmawa.lpj.lpj-detail");
     }
+
+    public function postLpj() {
+        return redirect("/lpj")->with("success", "LPJ berhasil diupload");
+    }
+
+    public function postLpjDetail() {
+        return redirect("/lpj/lpj-detail")->with("success", "Status LPJ berhasil diubah");
+    }
 }

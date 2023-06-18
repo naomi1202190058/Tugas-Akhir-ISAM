@@ -5,13 +5,14 @@
   <a href="/">
     <img src="/images/icons/back.png" alt="Icon" width="20px">
   </a>
-  <h3 class="pt-4 pb-3 fw-semibold ms-4">Edit Banner ISAM</h3>
+  <h3 class="pt-4 pb-3 fw-semibold ms-4">Edit Banner</h3>
 </div>
 @endsection
 
 @section('content')
   <div class="mx-4 my-5 min-vh-100">
-    <form action="">
+    <form action="/banner/tambah" method="post">
+      @csrf
       <div class="col-10">
         <div class="mb-3">
           <label for="judul_banner" class="form-label fw-medium">Judul Banner</label>

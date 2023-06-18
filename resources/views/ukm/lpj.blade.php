@@ -32,13 +32,13 @@
             </div>
           </td>
           <td>
-            <button type="button" class="btn text-white upload-button text-3xs status" data-bs-toggle="modal" data-bs-target="#uploadModal">
+            <div class="text-white upload-button text-3xs status">
               <img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">
               Upload Dokumen
             </button>
           </td>
           <td class="text-center">
-            <a href="">
+            <a href="" data-bs-toggle="modal" data-bs-target="#statusModal">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -56,13 +56,13 @@
             </div>
           </td>
           <td>
-            <div class="status pending">
+            <div class="text-white text-3xs status pending">
               <img class="me-2" src="/images/icons/status/pending.png" alt="Icon" width="20px">
               <span class="text-3xs">Waiting</span>
             </div>
           </td>
           <td class="text-center">
-            <a href="">
+            <a href="" data-bs-toggle="modal" data-bs-target="#statusModal">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -80,13 +80,13 @@
             </div>
           </td>
           <td>
-            <div class="status finished">
+            <div class="text-white text-3xs status finished">
               <img class="me-2" src="/images/icons/status/acc.png" alt="Icon" width="20px">
               <span class="text-3xs">Finished</span>
             </div>
           </td>
           <td class="text-center">
-            <a href="">
+            <a href="" data-bs-toggle="modal" data-bs-target="#statusModal">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -102,7 +102,8 @@
         <div class="modal-body mt-4 mb-2 mx-2">
           <div class="text-center">
             <span class="fw-medium">Upload dokumen LPJ</span>
-            <form action="">
+            <form action="/lpj" method="post">
+              @csrf
               <div class="d-flex justify-content-center my-5">
                 <button type="button" class="btn text-white text-3xs status modal-upload-button">Upload Dokumen</button>
               </div>
@@ -116,6 +117,33 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="statusModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content position-relative rounded-4">
+        <div class="modal-body d-flex align-items-center justify-content-center" style="min-height: 13rem">
+          <div class="text-center mt-3">
+            <span class="d-block mb-4">Tidak ada feedback</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
 @endsection
 
 @section('myscript')
@@ -131,5 +159,8 @@
     inputFile.addEventListener("change", () => {
       submitButton.disabled = false;
     })
+
+    const myModal = new bootstrap.Modal(document.getElementById('success'))
+    myModal.show()
   </script>
 @endsection

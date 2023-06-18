@@ -3,16 +3,16 @@
     <a data-bs-toggle="offcanvas" href="#sidebar" role="button">
       <img src="/images/icons/menu.png" alt="Icon" width="25px">
     </a>
-    <a href="" class="logo-navbar">
-      <img src="/images/logo/logo-default.png" class="h-8 mr-3" alt="Logo" />
+    <a href="/" class="logo-navbar">
+      <img src="/images/logo/logo.png" alt="Logo" />
     </a>
     <div class="d-flex align-items-center">
       @if (session()->get("role") == "ukm")
         <a href="/profile" class="text-decoration-none">
           <div class="d-flex align-items-center me-5">
-            <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Profile Picture" width="40px">
+            <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Profile Picture" width="40px">
             <div class="text-3xs ms-2">
-              <span class="text-white fw-medium">Tel-U Esport</span>
+              <span class="text-white fw-medium">Tel-U E-Sports</span>
               <span class="d-block" style="color: #E0E0E0">Admin</span class="text-3xs">
             </div>
           </div>
@@ -35,8 +35,6 @@
     <div class="d-flex justify-content-between align-items-center py-2 px-3">
       <div class="d-flex align-items-center">
         <span class="text-3xs fw-medium d-block me-2">Notifications</span>
-        <span class="text-4xs fw-medium d-block me-4" style="color: #9EA0AA">All</span>
-        <img class="d-block" src="/images/icons/filter.png" alt="Icon">
       </div>
       <div class="read-all">
         <span class="text-3xs">Mark all as read</span>
@@ -47,7 +45,7 @@
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="new-notif"></div>
         <div class="pt-2 pe-3">
-          <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Logo UKM" width="34px">
+          <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
           <span class="fw-semibold text-3xs">RKU baru berhasil diajukan, menunggu ACC Ditmawa</span>
@@ -57,7 +55,7 @@
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="new-notif"></div>
         <div class="pt-2 pe-3">
-          <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Logo UKM" width="34px">
+          <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
           <span class="fw-semibold text-3xs">LPJ berhasil diupload, menunggu ACC Ditmawa</span>
@@ -68,7 +66,7 @@
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="new-notif"></div>
         <div class="pt-2 pe-3">
-          <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Logo UKM" width="34px">
+          <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
           <span class="fw-semibold text-3xs">LPJ berhasil diajukan, menunggu ACC Ditmawa</span>
@@ -78,7 +76,7 @@
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="new-notif"></div>
         <div class="pt-2 pe-3">
-          <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Logo UKM" width="34px">
+          <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
           <span class="fw-semibold text-3xs">Telkom University E-sports telah melakukan upload LPJ</span>
@@ -87,7 +85,7 @@
       </div>
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="pt-2 pe-3">
-          <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Logo UKM" width="34px">
+          <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
           <span class="fw-semibold text-3xs">Telkom University E-sports telah memilih Jadwal Presentasi</span>
@@ -96,7 +94,7 @@
       </div>
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="pt-2 pe-3">
-          <img class="rounded-circle" src="/images/logo-ukm/telu-esport.png" alt="Logo UKM" width="34px">
+          <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
           <span class="fw-semibold text-3xs">Telkom University E-sports telah mengajukan Proposal Baru</span>

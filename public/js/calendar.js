@@ -4,6 +4,7 @@ let currentMonth = date.getMonth();
 let currentDay = date.getDay();
 let currentDate = date.getDate();
 
+const jadwal = document.querySelector(".jadwal");
 const month = document.querySelector(".month");
 const year = document.querySelector(".year");
 const days = document.querySelector(".days");
@@ -37,88 +38,29 @@ const daysList = [
 
 const submitJadwalBtn = document.querySelector(".submit-jadwal");
 
-function renderTime() {
-  const time = document.querySelector(".time");
+fullDate();
+renderCalendar();
+renderFullDate();
+editJadwal();
 
-  time.innerHTML = /* HTML */ `<ul>
-    <li>
-      <input type="radio" name="time" id="08:00" />
-      <label for="08:00">08:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="08:30" />
-      <label for="08:30">08:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="09:00" />
-      <label for="09:00">09:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="09:30" />
-      <label for="09:30">09:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="10:00" />
-      <label for="10:00">10:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="10:30" />
-      <label for="10:30">10:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="11:00" />
-      <label for="11:00">11:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="11:30" />
-      <label for="11:30">11:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="12:00" />
-      <label for="12:00">12:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="12:30" />
-      <label for="12:30">12:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="13:00" />
-      <label for="13:00">13:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="13:30" />
-      <label for="13:30">13:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="14:00" />
-      <label for="14:00">14:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="14:30" />
-      <label for="14:30">14:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="15:00" />
-      <label for="15:00">15:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="15:30" />
-      <label for="15:30">15:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="16:00" />
-      <label for="16:00">16:00</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="16:30" />
-      <label for="16:30">16:30</label>
-    </li>
-    <li>
-      <input type="radio" name="time" id="17:00" />
-      <label for="17:00">17:00</label>
-    </li>
-  </ul>`;
-}
+prevNext.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    currentMonth = icon.firstElementChild.classList.contains("prev")
+      ? currentMonth - 1
+      : currentMonth + 1;
+
+    if (currentMonth < 0 || currentMonth > 11) {
+      date = new Date(currentYear, currentMonth);
+      currentYear = date.getFullYear();
+      currentMonth = date.getMonth();
+    } else {
+      date = new Date();
+    }
+
+    renderCalendar();
+    renderFullDate();
+  });
+});
 
 function renderCalendar() {
   const monthNow = new Date().getMonth();
@@ -137,17 +79,10 @@ function renderCalendar() {
   }
 
   for (let i = 1; i <= lastDateofMonth; i++) {
-    if (i == currentDate && currentMonth == monthNow) {
-      li += /* HTML */ `<li>
-        <input type="radio" name="date" id="${i}" checked />
-        <label for="${i}">${i}</label>
-      </li>`;
-    } else {
-      li += /* HTML */ `<li>
-        <input type="radio" name="date" id="${i}" />
-        <label for="${i}">${i}</label>
-      </li>`;
-    }
+    li += /* HTML */ `<li>
+      <input type="radio" name="date" id="${i}" />
+      <label for="${i}">${i}</label>
+    </li>`;
   }
 
   for (let i = lastDayofMonth; i < 6; i++) {
@@ -173,34 +108,34 @@ function renderFullDate() {
   const allDates = document.querySelectorAll(
     ".days li:not(.inactive) input[type='radio']"
   );
-
-  const elements = [...allDates, ...prevNext];
+  const allTimes = document.querySelectorAll(
+    ".time li:not(.inactive) input[type='radio']"
+  );
+  const elements = [...allDates, ...allTimes, ...prevNext];
 
   elements.forEach((element) => {
     element.addEventListener("click", function () {
-      const selectedDate = this.id;
-      const selectedDay = new Date(
-        currentYear,
-        currentMonth,
-        selectedDate
-      ).getDay();
       const times = document.querySelectorAll(
         ".time input[type='radio']:checked, .time input[type='checkbox']:checked"
       );
+      if (this.name == "date") {
+        const selectedDate = this.id;
+        const selectedDay = new Date(
+          currentYear,
+          currentMonth,
+          selectedDate
+        ).getDay();
+        jadwal.lastElementChild.classList.remove("d-none");
+        fullDate(selectedDay, selectedDate);
+      }
+      if (this.name == "time") {
+        submitJadwalBtn.disabled = false;
+      }
 
-      if (times.length != 0) {
+      if (this.classList.contains("prev-next")) {
         times.forEach((time) => {
           time.checked = false;
         });
-      }
-      if (submitJadwalBtn != null) {
-        submitJadwalBtn.disabled = true;
-        submitHandler();
-      }
-
-      if (this.name == "date") {
-        fullDate(selectedDay, selectedDate);
-        renderTime();
       }
     });
   });
@@ -219,6 +154,7 @@ function editJadwal() {
 
     selectedDate.parentElement.classList.add("inactive");
     selectedDate.checked = false;
+    submitJadwalBtn.disabled = false;
   });
 
   availableDate.addEventListener("click", () => {
@@ -228,6 +164,7 @@ function editJadwal() {
 
     selectedDate.parentElement.classList.remove("inactive");
     selectedDate.checked = false;
+    submitJadwalBtn.disabled = false;
   });
 
   notAvailableTime.addEventListener("click", () => {
@@ -239,6 +176,8 @@ function editJadwal() {
       time.parentElement.classList.add("inactive");
       time.checked = false;
     });
+
+    submitJadwalBtn.disabled = false;
   });
 
   availableTime.addEventListener("click", () => {
@@ -250,29 +189,7 @@ function editJadwal() {
       time.parentElement.classList.remove("inactive");
       time.checked = false;
     });
+
+    submitJadwalBtn.disabled = false;
   });
 }
-
-fullDate();
-renderCalendar();
-renderFullDate();
-editJadwal();
-
-prevNext.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    currentMonth = icon.firstElementChild.classList.contains("prev")
-      ? currentMonth - 1
-      : currentMonth + 1;
-
-    if (currentMonth < 0 || currentMonth > 11) {
-      date = new Date(currentYear, currentMonth);
-      currentYear = date.getFullYear();
-      currentMonth = date.getMonth();
-    } else {
-      date = new Date();
-    }
-
-    renderCalendar();
-    renderFullDate();
-  });
-});

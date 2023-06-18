@@ -4,6 +4,11 @@
   <div class="col">
     <h3 class="pt-4 pb-3 fw-semibold">Daftar UKM</h3>
   </div>
+  @if (session()->get("role") == "ditmawa")
+    <div class="col-3 text-end me-4">
+      <a href="/ukm/tambah" class="btn border-0 text-white" style="background-color: #507ca5">+ Tambah UKM Baru</a>
+    </div>
+  @endif
   <div class="col-3">
     <div class="bg-white d-flex align-items-center rounded px-1">
       <input type="text" class="form-control border-0 shadow-none py-2" placeholder="Search">
@@ -15,7 +20,158 @@
 @endsection
 
 @section('content')
-  @include('partials.ukm-list')
+  <div class="col mx-4">
+    <div class="row gx-5 mb-5">
+      <div>
+        <h3 class="pb-3 fw-semibold " style="color: #5f5f5f; border-bottom: 3px solid #507ca5">Kesenian & Kebudayaan</h3>
+      </div>
+      @foreach ($ukmList as $ukm)
+        @if ($ukm["jenis_ukm"] != "Kesenian & Kebudayaan")
+          @continue
+        @endif
+        <div class="col-4 d-flex my-4">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+            <div class="card-body d-flex align-items-center">
+              <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
+              <div class="ms-4">
+                <span class="d-block mb-1">Nama UKM</span>
+                <h6>{{ $ukm["nama_ukm"] }}</h6>
+                <span class="d-block mb-1">Jenis UKM</span>
+                <h6>{{ $ukm["jenis_ukm"] }}</h6>
+              </div>
+            </div>
+            <div class="position-absolute btn-detail">
+              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
+                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
+              @else
+                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
+              @endif
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <div class="row gx-5 mb-5">
+      <div>
+        <h3 class="pb-3 fw-semibold " style="color: #5f5f5f; border-bottom: 3px solid #507ca5">Olahraga</h3>
+      </div>
+      @foreach ($ukmList as $ukm)
+        @if ($ukm["jenis_ukm"] != "Olahraga")
+          @continue
+        @endif
+        <div class="col-4 d-flex my-4">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+            <div class="card-body d-flex align-items-center">
+              <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
+              <div class="ms-4">
+                <span class="d-block mb-1">Nama UKM</span>
+                <h6>{{ $ukm["nama_ukm"] }}</h6>
+                <span class="d-block mb-1">Jenis UKM</span>
+                <h6>{{ $ukm["jenis_ukm"] }}</h6>
+              </div>
+            </div>
+            <div class="position-absolute btn-detail">
+              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
+                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
+              @else
+                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
+              @endif
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <div class="row gx-5 mb-5">
+      <div>
+        <h3 class="pb-3 fw-semibold " style="color: #5f5f5f; border-bottom: 3px solid #507ca5">Penalaran</h3>
+      </div>
+      @foreach ($ukmList as $ukm)
+        @if ($ukm["jenis_ukm"] != "Penalaran")
+          @continue
+        @endif
+        <div class="col-4 d-flex my-4">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+            <div class="card-body d-flex align-items-center">
+              <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
+              <div class="ms-4">
+                <span class="d-block mb-1">Nama UKM</span>
+                <h6>{{ $ukm["nama_ukm"] }}</h6>
+                <span class="d-block mb-1">Jenis UKM</span>
+                <h6>{{ $ukm["jenis_ukm"] }}</h6>
+              </div>
+            </div>
+            <div class="position-absolute btn-detail">
+              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
+                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
+              @else
+                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
+              @endif
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <div class="row gx-5 mb-5">
+      <div>
+        <h3 class="pb-3 fw-semibold " style="color: #5f5f5f; border-bottom: 3px solid #507ca5">Kerohanian</h3>
+      </div>
+      @foreach ($ukmList as $ukm)
+        @if ($ukm["jenis_ukm"] != "Kerohanian")
+          @continue
+        @endif
+        <div class="col-4 d-flex my-4">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+            <div class="card-body d-flex align-items-center">
+              <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
+              <div class="ms-4">
+                <span class="d-block mb-1">Nama UKM</span>
+                <h6>{{ $ukm["nama_ukm"] }}</h6>
+                <span class="d-block mb-1">Jenis UKM</span>
+                <h6>{{ $ukm["jenis_ukm"] }}</h6>
+              </div>
+            </div>
+            <div class="position-absolute btn-detail">
+              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
+                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
+              @else
+                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
+              @endif
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <div class="row gx-5 mb-5">
+      <div>
+        <h3 class="pb-3 fw-semibold " style="color: #5f5f5f; border-bottom: 3px solid #507ca5">Sosial</h3>
+      </div>
+      @foreach ($ukmList as $ukm)
+        @if ($ukm["jenis_ukm"] != "Sosial")
+          @continue
+        @endif
+        <div class="col-4 d-flex my-4">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+            <div class="card-body d-flex align-items-center">
+              <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
+              <div class="ms-4">
+                <span class="d-block mb-1">Nama UKM</span>
+                <h6>{{ $ukm["nama_ukm"] }}</h6>
+                <span class="d-block mb-1">Jenis UKM</span>
+                <h6>{{ $ukm["jenis_ukm"] }}</h6>
+              </div>
+            </div>
+            <div class="position-absolute btn-detail">
+              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
+                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
+              @else
+                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
+              @endif
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+  </div>
 
   <div class="modal fade" id="detailModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -58,4 +214,26 @@
       </div>
     </div>
   </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
+@endsection
+
+@section('myscript')
+  <script>
+    const myModal = new bootstrap.Modal(document.getElementById('success'))
+    myModal.show()
+  </script>
 @endsection

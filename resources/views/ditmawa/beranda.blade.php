@@ -1,8 +1,13 @@
 @extends('layouts.beranda')
 
 @section('navigation')
-  <div class="container d-flex justify-content-start align-items-center" style="height: 35rem">
-    <div class="row gx-5 gy-4">
+  <div class="row my-5">
+    <div class="col d-flex justify-content-center">
+      <a href="/banner" class="btn border-0 d-flex align-items-center px-3 text-white edit-banner"><img class="me-2" src="/images/icons/edit-white.png" alt="Icon" width="18px">Edit Banner</a>
+    </div>
+  </div>  
+  <div class="container d-flex align-items-center my-5">
+    <div class="row g-4">
       <div class="col-4">
         <a href="/ukm" class="navigation bg-white d-flex align-items-center rounded-3 p-4">
           <div class="rounded-circle bg-sky p-4 me-3">
@@ -44,17 +49,6 @@
           <div>
             <h5 class="text-xs">RKU</h5>
             <span class="text-3xs">Monitoring rencana kegiatan UKM</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-4">
-        <a href="/edit-banner" class="navigation bg-white d-flex align-items-center rounded-3 p-4">
-          <div class="rounded-circle bg-sky p-4 me-3">
-            <img src="/images/icons/navigation/edit-banner-pengajuan-proposal.png" alt="Icon">
-          </div>
-          <div>
-            <h5 class="text-xs">Edit Banner</h5>
-            <span class="text-3xs">Edit banner ISAM</span>
           </div>
         </a>
       </div>

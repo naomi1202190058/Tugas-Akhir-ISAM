@@ -1,10 +1,10 @@
 @extends('layouts.tertiary')
 
 @section('header')
-  <div class="col">
+  <div class="col-6">
     <h3 class="pt-4 pb-3 fw-semibold">Rencana Kegiatan UKM</h3>
   </div>
-  <div class="col-2 text-end">
+  <div class="col-6 text-end">
     <button type="button" class="btn border-0 text-white" style="background-color: #58CAF4" data-bs-toggle="modal" data-bs-target="#statistikModal"><img class="me-2" src="/images/icons/statistik.png" alt="Icon" width="18px">Lihat Statistik</button>
   </div>
 @endsection
@@ -25,10 +25,7 @@
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review" data-bs-toggle="modal" data-bs-target="#detailModal">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
+            <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 1</a>
           </td>
           <td>
             <button type="button" class="btn text-white text-3xs status aksi" data-bs-toggle="modal" data-bs-target="#aksiModal">
@@ -41,10 +38,7 @@
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review" data-bs-toggle="modal" data-bs-target="#detailModal">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
+            <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 2</a>
           </td>
           <td>
             <button type="button" class="btn text-white text-3xs status aksi" data-bs-toggle="modal" data-bs-target="#aksiModal">
@@ -57,10 +51,7 @@
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
-            <button type="button" class="btn text-white text-3xs status review" data-bs-toggle="modal" data-bs-target="#detailModal">
-              <img class="me-2" src="/images/icons/status/review.png" alt="Icon" width="20px">
-              Review
-            </button>
+            <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 3</a>
           </td>
           <td>
             <button type="button" class="btn text-white text-3xs status aksi" data-bs-toggle="modal" data-bs-target="#aksiModal">
@@ -80,7 +71,8 @@
         <button type="button" class="btn-close position-absolute z-3 shadow-none" data-bs-dismiss="modal"></button>
         <div class="modal-body mt-4 mb-2 mx-2">
           <div>
-            <form action="" method="post">
+            <form action="/rku/waiting" method="post">
+              @csrf
               <div class="row">
                 <div class="col-10 mb-3">
                   <label for="aksi" class="form-label fw-medium">Aksi</label>
@@ -213,8 +205,27 @@
       </div>
     </div>
   </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
 @endsection
 
 @section('myscript')
   <script src="/js/form-handler.js"></script>
+  <script>
+    const myModal = new bootstrap.Modal(document.getElementById('success'))
+    myModal.show()
+  </script>
 @endsection

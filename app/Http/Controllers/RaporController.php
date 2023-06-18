@@ -21,4 +21,8 @@ class RaporController extends Controller
     public function prokerDetail() {
         return view("ditmawa.rapor.proker-detail");
     }
+
+    public function postProkerDetail() {
+        return redirect("/rapor/rapor-detail/proker-detail")->with("success", "Nilai rapor tersimpan");
+    }
 }

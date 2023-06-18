@@ -80,36 +80,32 @@ textarea::placeholder {
   line-height: 20px;
 }
 
-.revisi {
+.status.revisi {
   background-color: #a65959 !important;
 }
 
-.pending {
+.status.pending {
   background-color: #e2ba54 !important;
 }
 
-.acc {
+.status.acc {
   background-color: #507ca5 !important;
 }
 
-.ditolak {
+.status.ditolak {
   background-color: #e82e45 !important;
 }
 
-.review {
+.status.review {
   background-color: #808080 !important;
 }
 
-.aksi {
+.status.aksi {
   background-color: #93b8cd !important;
 }
 
-.finished {
+.status.finished {
   background-color: #54ad46 !important;
-}
-
-.aksi {
-  background-color: #93b8cd !important;
 }
 
 .bg-login {
@@ -538,4 +534,40 @@ input[type="checkbox"] + label,
 
 .revisi-textarea {
   border: 2px solid #e2ba54 !important;
+}
+
+.login-btn {
+  background-color: #507ca5 !important;
+}
+
+.login-btn:hover {
+  background-color: #6293c0 !important;
+}
+
+.change-login-btn {
+  background-color: #8b8b8b !important;
+}
+
+.change-login-btn:hover {
+  background-color: #a4a4a4 !important;
+}
+
+.faq-container {
+  background-color: #e4e7eb;
+}
+
+.faq-container.open {
+  background-color: #507ca5;
+}
+
+.open .faq-title span {
+  color: white;
+}
+
+.edit-banner {
+  background-color: #a3a3a3;
+}
+
+.edit-banner:hover {
+  background-color: #b3b3b3;
 }

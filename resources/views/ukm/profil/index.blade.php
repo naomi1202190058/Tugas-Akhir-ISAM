@@ -46,7 +46,8 @@
   </div>
   
   <div class="col-12 my-4 d-flex justify-content-end align-items-start">
-    <form action="" method="post" class="d-flex align-items-center">
+    <form action="/profile" method="post" class="d-flex align-items-center">
+      @csrf
       <div class="d-flex align-items-center"></div>
       <button type="button" class="btn border-0 d-flex align-items-center px-3 ms-3 edit-bagan" style="background-color: white"><img class="me-2" src="/images/icons/edit.png" alt="Icon" width="18px"><span>Edit Bagan</span></button>
       <input type="file" class="d-none input-file" accept="image/*" name="bagan">
@@ -55,6 +56,21 @@
   <div class="col-12 text-center mb-5">
     <img class="struktur-organisasi" src="/images/bagan.png" alt="Struktur Organisasi" width="70%">
   </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
 @endsection
 
 @section('myscript')
@@ -78,5 +94,8 @@
       editBagan.type = "submit";
       strukturOrganisasi.src = newImageSrc;
     })
+
+    const myModal = new bootstrap.Modal(document.getElementById('success'))
+    myModal.show()
   </script>
 @endsection

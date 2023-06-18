@@ -2,7 +2,7 @@
 
 @section('header')
   <div class="col">
-    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Rapor UKM (Telkom University Esports)</h3>
+    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Rapor UKM (Telkom University E=Sports)</h3>
   </div>
 @endsection
 
@@ -12,7 +12,7 @@
       <tbody>
         <tr>
           <td>Nama Organisasi/UKM</td>
-          <td>: Telkom University Esports</td>
+          <td>: Telkom University E-Sports</td>
         </tr>
         <tr>
           <td>Kode Organisasi/UKM</td>

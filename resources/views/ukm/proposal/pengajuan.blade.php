@@ -7,7 +7,8 @@
 @endsection
 
 @section('content')
-  <form action="" class="p-5">
+  <form action="/proposal/pengajuan" class="p-5" method="post">
+    @csrf
     <div class="col-10">
       <div class="mb-3">
         <label for="kegiatan" class="form-label fw-medium">Nama Kegiatan</label>

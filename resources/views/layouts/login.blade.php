@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ISAM</title>
+  <title>SIPPROSI</title>
   {{-- My Fonts --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
   <div class="bg-white-transparent">
     <div class="row justify-content-center">
       <div class="col-8 my-5">
-        <img src="/images/logo/logo-M.png" alt="Logo">
+        <img src="/images/logo/logo.png" alt="Logo">
         @yield('login-form')
       </div>
     </div>

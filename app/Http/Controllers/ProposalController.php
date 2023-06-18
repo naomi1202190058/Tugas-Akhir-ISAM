@@ -25,4 +25,20 @@ class ProposalController extends Controller
     public function declined() {
         return view("ditmawa.proposal.declined");
     }
+
+    public function postPengajuan() {
+        return redirect("/proposal/monitoring")->with("success", "Berhasil mengajukan proposal");
+    }
+
+    public function postStatus() {
+        return redirect("/proposal/monitoring/waiting")->with("success", "Status RKU berhasil diubah");
+    }
+
+    public function pilihJadwal() {
+        return redirect("/proposal/monitoring")->with("success", "Berhasil mengajukan tanggal presentasi");
+    }
+
+    public function editJadwal() {
+        return redirect("/proposal/monitoring/waiting")->with("success", "Jadwal telah diperbarui");
+    }
 }

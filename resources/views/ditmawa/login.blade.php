@@ -20,8 +20,8 @@
         <a href="" class="text-3xs" style="color: #868B90">Forgot My Password</a>
       </div>
       <div class="d-grid mt-5 mb-5">
-        <button type="submit" class="btn text-white mb-4 py-2" style="background-color: #77C5FD">Masuk</button>
-        <a href="/login/ukm" class="btn text-white" style="background-color: #8B8B8B">Masuk sebagai UKM</a>
+        <button type="submit" class="btn text-white mb-4 py-2 login-btn">Masuk</button>
+        <a href="/login/ukm" class="btn text-white py-2 change-login-btn">Masuk sebagai UKM</a>
       </div>
     </form>
   </div>

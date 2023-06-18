@@ -1,10 +1,10 @@
 @extends('layouts.primary')
 
 @section('header')
-  <div class="col">
+  <div class="col-6">
     <h3 class="pt-4 pb-3 fw-semibold">Rencana Kegiatan UKM</h3>
   </div>
-  <div class="col-2 text-end">
+  <div class="col-6 text-end">
     <a href="/rku/create" class="btn border-0" style="background-color: white">+ Tambah Kegiatan</a>
   </div>
 @endsection
@@ -37,7 +37,7 @@
             </div>
           </td>
           <td class="pb-4 text-center">
-            <a href="/rku/status/ml">
+            <a class="aksi" href="" data-bs-toggle="modal" data-bs-target="#statusModal" data-status="Tanggal/tempat harus diubah karena pada tanggal tersebut ruangan telah digunakan untuk kegiatan lain">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -59,7 +59,7 @@
             </div>
           </td>
           <td class="pb-4 text-center">
-            <a href="/rku/status/pubg">
+            <a class="aksi" href="" data-bs-toggle="modal" data-bs-target="#statusModal" data-status="Tidak ada feedback">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -81,7 +81,7 @@
             </div>
           </td>
           <td class="text-center pb-4">
-            <a href="/rku/status/codm">
+            <a class="aksi" href="" data-bs-toggle="modal" data-bs-target="#statusModal" data-status="Tidak ada feedback">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -103,7 +103,7 @@
             </div>
           </td>
           <td class="text-center pb-4">
-            <a href="/rku/status/valorant">
+            <a class="aksi" href="" data-bs-toggle="modal" data-bs-target="#statusModal" data-status="Tidak ada feedback">
               <img src="/images/icons/eye.png" alt="Icon" width="20px">
             </a>
           </td>
@@ -111,4 +111,51 @@
       </tbody>
     </table>
   </div>
+
+  <div class="modal fade" id="statusModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content position-relative rounded-4 mx-5">
+        <div class="modal-body d-flex align-items-center justify-content-center" style="min-height: 13rem">
+          <div class="text-center mt-3">
+            <span class="d-block mb-4 status-message"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if (session()->has('success'))
+    <div class="modal fade" id="success" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content position-relative rounded-4">
+          <div class="modal-body mt-4 mb-2 mx-2">
+            <div class="text-center">
+              <img class="my-4" src="/images/done.png" alt="Done" width="50px">
+              <span class="fw-medium d-block mb-4" style="color: #32bea6">{{ session("success") }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
+@endsection
+
+@section('myscript')
+  <script>
+    const aksi = document.querySelectorAll(".aksi");
+    const statusMessage = document.querySelector(".status-message");
+    aksi.forEach(a => {
+      a.addEventListener("click", function() {
+        statusMessage.textContent= this.dataset.status;
+        // if(this.dataset.status == "revisi") {
+        //   statusMessage.textContent = "Tanggal/tempat harus diubah karena pada tanggal tersebut ruangan telah digunakan untuk kegiatan lain";
+        // } else {
+        //   statusMessage.textContent = "Tidak ada feedback"
+        // };
+      });
+    });
+
+    const myModal = new bootstrap.Modal(document.getElementById('success'));
+    myModal.show();
+  </script>
 @endsection
