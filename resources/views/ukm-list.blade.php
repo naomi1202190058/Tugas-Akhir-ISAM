@@ -41,7 +41,7 @@
               </div>
             </div>
             <div class="position-absolute btn-detail">
-              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
+              @if ($ukm["nama_ukm"] == "UKM Aceh")           
                 <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
               @else
                 <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
@@ -71,11 +71,7 @@
               </div>
             </div>
             <div class="position-absolute btn-detail">
-              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
-                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
-              @else
-                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
-              @endif
+              <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
             </div>
           </div>
         </div>
@@ -101,11 +97,7 @@
               </div>
             </div>
             <div class="position-absolute btn-detail">
-              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
-                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
-              @else
-                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
-              @endif
+              <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
             </div>
           </div>
         </div>
@@ -131,11 +123,7 @@
               </div>
             </div>
             <div class="position-absolute btn-detail">
-              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
-                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
-              @else
-                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
-              @endif
+              <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
             </div>
           </div>
         </div>
@@ -161,11 +149,7 @@
               </div>
             </div>
             <div class="position-absolute btn-detail">
-              @if ($ukm["nama_ukm"] == "Telkom University Esports")           
-                <button type="button" class="btn p-0 border-0 text-3xs" data-bs-toggle="modal" data-bs-target="#detailModal" style="color: #507ca5;">Lihat detail</button>
-              @else
-                <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
-              @endif
+              <button type="button" class="btn p-0 border-0 text-3xs"" style="color: #507ca5;">Lihat detail</button>
             </div>
           </div>
         </div>
@@ -180,16 +164,16 @@
         <div class="modal-body m-3 detail-modal-body">
           <div class="row gx-5">
             <div class="col-3 text-center">
-              <img class="mt-2 rounded-4" src="/images/logo-ukm/telu-esport.png" alt="Gambar UKM" width="95%">
+              <img class="mt-2 rounded-4" src="/images/logo-ukm/ukm-aceh.png" alt="Gambar UKM" width="95%">
             </div>
             <div class="col mt-2">
               <div class="mb-3">
                 <span class="mb-1 d-block text-3xs">Nama UKM</span>
-                <h6 class="text-2xs">Telkom University Esports</h6>
+                <h6 class="text-2xs">UKM Aceh</h6>
               </div>
               <div class="mb-3">
                 <span class="mb-1 d-block text-3xs">Jenis UKM</span>
-                <h6 class="text-2xs">Olahraga</h6>
+                <h6 class="text-2xs">Kesenian & Kebudayaan</h6>
               </div>
               <div class="mb-3">
                 <span class="mb-1 d-block text-3xs">Pengurus</span>
@@ -202,7 +186,7 @@
                 <span class="mb-1 d-block text-3xs">Contact Person</span>
                 <h6 class="text-2xs"><img src="/images/icons/telp.png" alt="Icon">(Farhan)+62 812 3847 3847</h6>
                 <h6 class="text-2xs"><img src="/images/icons/line.png" alt="Icon">@hsgd78</h6>
-                <h6 class="text-2xs"><img src="/images/icons/instagram.png" alt="Icon">@volleyball_telU</h6>
+                <h6 class="text-2xs"><img src="/images/icons/instagram.png" alt="Icon">@ukmaceh_telU</h6>
               </div>
               <div>
                 <span class="mb-1 d-block text-3xs">Tentang UKM</span>
