@@ -5,6 +5,7 @@ use App\Http\Controllers\BannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RkuController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LpjController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProposalController;
@@ -23,14 +24,14 @@ use App\Http\Controllers\UkmController;
 */
 
 // Route Login  
-Route::get('/login/ukm', [AuthController::class, "loginUkm"])->name("login");
-Route::get('/login/ditmawa', [AuthController::class, "loginDitmawa"]);
-Route::post('/authenticate/ukm', [AuthController::class, "authenticateUkm"]);
-Route::post('/authenticate/ditmawa', [AuthController::class, "authenticateDitmawa"]);
+Route::get('/login', [AuthController::class, "login"])->name("login");
+Route::get('/reset-password', [AuthController::class, "resetPassword"]);
+Route::post('/reset-password', [AuthController::class, "postResetPassword"]);
+Route::post('/authenticate', [AuthController::class, "authenticate"]);
 Route::get('/logout', [AuthController::class, "logout"]);
 
 // Route Beranda
-Route::get('/', [BerandaController::class, "index"])->middleware("auth:ditmawa,ukm");
+Route::get('/', [BerandaController::class, "index"])->middleware("auth");
 
 // Route UKM
 Route::get("/ukm", [UkmController::class, "index"]);
@@ -38,7 +39,7 @@ Route::get("/ukm/tambah", [UkmController::class, "tambah"]);
 Route::post("/ukm/tambah", [UkmController::class, "postUkm"]);
 
 // Route RKU
-Route::get("/rku", [RkuController::class, "rkuUkm"]);
+Route::get("/rku", [RkuController::class, "index"]);
 Route::get("/rku/status/{param}", [RkuController::class, "status"]);
 Route::get("/rku/create", [RkuController::class, "createRku"]);
 Route::post("/rku/create", [RkuController::class, "postRkuUkm"]);
@@ -72,17 +73,20 @@ Route::post("/lpj/lpj-detail", [LpjController::class, "postLpjDetail"]);
 
 // Route Rapor
 Route::get("/rapor", [RaporController::class, "index"]);
+Route::get("/rapor/ukm-terbaik", [RaporController::class, "ukmTerbaik"]);
 Route::get("/rapor/rapor-detail", [RaporController::class, "raporDetail"]);
-Route::get("/rapor/rapor-detail/proker-detail", [RaporController::class, "prokerDetail"]);
-Route::post("/rapor/rapor-detail/proker-detail", [RaporController::class, "postProkerDetail"]);
+Route::get("/rapor/rapor-detail/penilaian-detail", [RaporController::class, "penilaianDetail"]);
+Route::post("/rapor/rapor-detail/penilaian-detail", [RaporController::class, "postPenilaian"]);
 
 // Route Banner 
 Route::get("/banner", [BannerController::class, "index"]);
 Route::get("/banner/tambah", [BannerController::class, "tambah"]);
+Route::get("/banner/riwayat", [BannerController::class, "riwayat"]);
+Route::post("/banner/riwayat", [BannerController::class, "postRiwayat"]);
 Route::post("/banner/tambah", [BannerController::class, "postBanner"]);
 Route::delete("/banner", [BannerController::class, "deleteBanner"]);
 
 // Route FAQ
-Route::get("/faq", function() {
-  return view("ukm.faq");
-});
+Route::get("/faq", [FaqController::class, "index"]);
+Route::get("/faq/tambah", [FaqController::class, "tambah"]);
+Route::post("/faq/tambah", [FaqController::class, "postTambah"]);

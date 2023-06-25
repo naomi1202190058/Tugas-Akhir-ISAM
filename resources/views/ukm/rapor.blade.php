@@ -1,8 +1,11 @@
 @extends('layouts.secondary')
 
 @section('header')
-  <div class="col">
+  <div class="col-6">
     <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Rapor UKM</h3>
+  </div>
+  <div class="col-6 text-end">
+    <a href="/rapor/ukm-terbaik" class="btn border-0 text-white" style="background-color: #E2BA54"><img class="me-2" src="/images/icons/ukm-terbaik.png" alt="Icon" width="18px">UKM Terbaik</a>
   </div>
 @endsection
 
@@ -43,13 +46,13 @@
       </tbody>
     </table>
   </div>
-  <div class="col-12 mt-1 mb-4">
+  <div class="col-12 mt-1 mb-5">
     <table class="table table-bordered bg-white table-rapor">
       <thead>
         <tr>
           <th>No</th>
-          <th>Kode Program Kerja</th>
-          <th>Nama Program Kerja</th>
+          <th>Kode Penilaian</th>
+          <th>Nama Penilaian</th>
           <th>Tanggal Pelaksanaan</th>
           <th>Keterangan</th>
           <th>Nilai</th>
@@ -59,60 +62,69 @@
         <tr>
           <td>1</td>
           <td>10293849</td>
-          <td>Proker 1</td>
+          <td>Latihan Rutin</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
         </tr>
         <tr>
           <td>2</td>
           <td>10293849</td>
-          <td>Proker 2</td>
+          <td>Kegiatan Regional 1</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
         </tr>
         <tr>
           <td>3</td>
           <td>10293849</td>
-          <td>Proker 3</td>
+          <td>Kegiatan Nasional 1</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
         </tr>
         <tr>
           <td>4</td>
           <td>10293849</td>
-          <td>Proker 4</td>
+          <td>Pengabdian Masyarakat</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
         </tr>
         <tr>
           <td>5</td>
           <td>10293849</td>
-          <td>Proker 5</td>
+          <td>Kegiatan Internasional</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
         </tr>
         <tr>
           <td>6</td>
           <td>10293849</td>
-          <td>Proker 6</td>
+          <td>Kompetisi Mandiri</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
         </tr>
         <tr>
           <td>7</td>
           <td>10293849</td>
-          <td>Proker 7</td>
+          <td>Kegiatan Regional 2</td>
           <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
           <td>-</td>
-          <td>15</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>10293849</td>
+          <td>Kegiatan Belmawa</td>
+          <td>11-Nov-2022 S/D 20-Nov-2022</td>
+          <td><a href="" style="color: #507CA5">Lihat keterangan</a></td>
+          <td>-</td>
         </tr>
       </tbody>
     </table>
+    <span class="text-danger text-4xs">Pilih salah satu kegiatan untuk melihat detail dan melakukan penliaian</span>
   </div>
 @endsection

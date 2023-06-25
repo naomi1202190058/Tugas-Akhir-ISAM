@@ -32,7 +32,7 @@
             </div>
           </td>
           <td>
-            <div class="text-white upload-button text-3xs status">
+            <button type="button" class="text-white upload-button border-0 text-3xs status" data-bs-toggle="modal" data-bs-target="#uploadModal">
               <img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">
               Upload Dokumen
             </button>
@@ -101,10 +101,14 @@
         <button type="button" class="btn-close position-absolute z-3 shadow-none" data-bs-dismiss="modal"></button>
         <div class="modal-body mt-4 mb-2 mx-2">
           <div class="text-center">
-            <span class="fw-medium">Upload dokumen LPJ</span>
+            <span class="fw-medium d-block mb-4">Upload dokumen LPJ</span>
+            <div class="d-flex align-items-center justify-content-center d-none upload-dokumen">
+              <img class="me-1" src="/images/icons/file.svg" alt="Icon" width="12px">
+              <span class="text-3xs" style="color: #7b7a7a"></span>
+            </div>
             <form action="/lpj" method="post">
               @csrf
-              <div class="d-flex justify-content-center my-5">
+              <div class="d-flex justify-content-center my-4">
                 <button type="button" class="btn text-white text-3xs status modal-upload-button">Upload Dokumen</button>
               </div>
               <input type="file" class="d-none input-file" accept=".docx, .doc, .pdf">
@@ -151,6 +155,7 @@
     const inputFile = document.querySelector(".input-file");
     const uploadButton = document.querySelector(".modal-upload-button");
     const submitButton = document.querySelector(".submit-button");
+    const uploadDokumen = document.querySelector(".upload-dokumen");
 
     uploadButton.addEventListener("click", () => {
       inputFile.click();
@@ -158,9 +163,12 @@
 
     inputFile.addEventListener("change", () => {
       submitButton.disabled = false;
+      uploadDokumen.classList.remove("d-none");
+      uploadDokumen.lastElementChild.textContent = inputFile.files[0].name;
     })
 
     const myModal = new bootstrap.Modal(document.getElementById('success'))
     myModal.show()
+
   </script>
 @endsection

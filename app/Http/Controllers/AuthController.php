@@ -7,40 +7,29 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function loginUKM() {
-        return view("ukm.login");
+    public function login() {
+        return view("login");
     }
 
-    public function loginDitmawa() {
-        return view("ditmawa.login");
-    }
-
-    public function authenticateUkm(Request $request) {
+    public function authenticate(Request $request) {
         $credentials = [
             "username" => $request->username,
             "password" => $request->password
         ];
-
-        if(Auth::guard("ukm")->attempt($credentials)) {
-            $request->session()->put("role", "ukm");
+        
+        if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            
+
             return redirect()->intended('/');
         }
     }
 
-    public function authenticateDitmawa(Request $request) {
-        $credentials = [
-            "sso_id" => $request->sso_id,
-            "password" => $request->password
-        ];
+    public function resetPassword() {
+        return view("reset-password");
+    }
 
-        if(Auth::guard("ditmawa")->attempt($credentials)) {
-            $request->session()->put("role", "ditmawa");
-            $request->session()->regenerate();
-            
-            return redirect()->intended('/');
-        }
+    public function postResetPassword() {
+        return redirect("/reset-password")->with("success", "Email reset password telah dikirim, cek email mu sekarang");
     }
 
     public function logout(Request $request) {
@@ -48,6 +37,6 @@ class AuthController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/login/ukm');
+        return redirect('/login');
     }
 }

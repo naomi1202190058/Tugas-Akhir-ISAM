@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class RaporController extends Controller
 {
     public function index() {
-        if(session()->get("role") == "ukm") {
+        if(auth()->user()->role == "ukm") {
             return view("ukm.rapor");
         } else {
             return view("ditmawa.rapor.index");
@@ -18,11 +18,15 @@ class RaporController extends Controller
         return view("ditmawa.rapor.rapor-detail");
     }
 
-    public function prokerDetail() {
-        return view("ditmawa.rapor.proker-detail");
+    public function penilaianDetail() {
+        return view("ditmawa.rapor.penilaian-detail");
     }
 
-    public function postProkerDetail() {
-        return redirect("/rapor/rapor-detail/proker-detail")->with("success", "Nilai rapor tersimpan");
+    public function ukmTerbaik() {
+        return view("ukm-terbaik");
+    }
+
+    public function postPenilaian(Request $request) {
+        return redirect("/rapor/rapor-detail")->with("success", ["Nilai rapor tersimpan", $request->nilai_kegiatan, $request->keterangan]);
     }
 }

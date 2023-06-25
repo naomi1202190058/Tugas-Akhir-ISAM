@@ -79,6 +79,7 @@
                   <select class="form-select shadow-none" id="aksi" name="aksi" required>
                     <option value="tes">Pilih Aksi</option>
                     <option value="ACC">ACC</option>
+                    <option value="Revisi">Revisi</option>
                     <option value="Tolak">Tolak</option>
                   </select>
                 </div>

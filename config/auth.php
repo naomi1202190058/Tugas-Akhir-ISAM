@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'ukm',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -36,13 +36,9 @@ return [
     */
 
     'guards' => [
-        'ukm' => [
+        'web' => [
             'driver' => 'session',
-            'provider' => 'ukm',
-        ],
-        'ditmawa' => [
-            'driver' => 'session',
-            'provider' => 'ditmawa',
+            'provider' => 'users',
         ],
     ],
 
@@ -64,14 +60,10 @@ return [
     */
 
     'providers' => [
-        'ukm' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-        ],
-        'ditmawa' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Ditmawa::class,
-        ],
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

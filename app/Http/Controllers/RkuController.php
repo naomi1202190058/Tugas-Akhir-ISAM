@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class RkuController extends Controller
 {
-    public function rkuUkm() {
-        return view("ukm.rku.index");
+    public function index() {
+        if(auth()->user()->role == "ukm") {
+            return view("ukm.rku.index");
+        } else {
+            return view("ditmawa.rku.index");
+        }
     }
 
     public function createRku() {

@@ -71,4 +71,28 @@
       </div>
     </div>
   </div>
+  <div class="contact-person py-2 px-3 rounded-pill d-flex align-items-center">
+    <div>
+      <img src="/images/icons/contact-person.png" alt="Icon" width="20px" class="me-1">
+      <span class="text-3xs">Contact Person</span>
+    </div>
+    <div class="ms-3 d-none no-contact">
+      <div>
+        <img src="/images/icons/wa.png" alt="Icon" width="14px" class="m-0">
+        <span class="text-3xs">0812374821718</span>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=62812374821718" class="text-white text-3xs m-0">Hubungi sekarang</a>
+    </div>
+  </div>
+@endsection
+
+@section('myscript')
+  <script>
+    const contactButton = document.querySelector(".contact-person");
+    const noContact = document.querySelector(".no-contact");
+
+    contactButton.addEventListener("click", () => {
+      noContact.classList.toggle("d-none");
+    })
+  </script>
 @endsection

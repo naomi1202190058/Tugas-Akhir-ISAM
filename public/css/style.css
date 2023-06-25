@@ -536,19 +536,11 @@ input[type="checkbox"] + label,
   border: 2px solid #e2ba54 !important;
 }
 
-.login-btn {
-  background-color: #507ca5 !important;
-}
-
-.login-btn:hover {
-  background-color: #6293c0 !important;
-}
-
-.change-login-btn {
+.kembali-btn {
   background-color: #8b8b8b !important;
 }
 
-.change-login-btn:hover {
+.kembali-btn:hover {
   background-color: #a4a4a4 !important;
 }
 
@@ -570,4 +562,39 @@ input[type="checkbox"] + label,
 
 .edit-banner:hover {
   background-color: #b3b3b3;
+}
+
+.contact-person {
+  color: white;
+  background-color: #e82e45;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.pilih-tahun {
+  list-style: none;
+  padding: 0;
+}
+
+.pilih-tahun li {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.pilih-tahun li:hover {
+  background-color: #e0e0e0;
+}
+
+.kuota-container * {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.kurang-kuota {
+  background-color: #e82e45;
+}
+
+.tambah-kuota {
+  background-color: #54ad46;
 }

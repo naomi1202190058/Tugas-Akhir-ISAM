@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
             "role" => "ukm"
         ]);
 
-        Ditmawa::create([
-            "sso_id" => "123456789",
+        User::create([
+            "username" => "123456789",
             "password" => bcrypt("password"),
             "role" => "ditmawa"
         ]);

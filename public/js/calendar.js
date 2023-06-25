@@ -125,11 +125,7 @@ function renderFullDate() {
           currentMonth,
           selectedDate
         ).getDay();
-        jadwal.lastElementChild.classList.remove("d-none");
         fullDate(selectedDay, selectedDate);
-      }
-      if (this.name == "time") {
-        submitJadwalBtn.disabled = false;
       }
 
       if (this.classList.contains("prev-next")) {
@@ -168,28 +164,40 @@ function editJadwal() {
   });
 
   notAvailableTime.addEventListener("click", () => {
-    const selectedTime = document.querySelectorAll(
-      ".time li input[type='checkbox']:checked"
+    const selectedTime = document.querySelector(
+      ".time li input[type='radio']:checked"
     );
 
-    selectedTime.forEach((time) => {
-      time.parentElement.classList.add("inactive");
-      time.checked = false;
-    });
+    selectedTime.parentElement.classList.add("inactive");
+    selectedTime.checked = false;
 
     submitJadwalBtn.disabled = false;
   });
 
   availableTime.addEventListener("click", () => {
-    const selectedTime = document.querySelectorAll(
-      ".time li input[type='checkbox']:checked"
-    );
+    availableTime.parentElement.innerHTML = /* HTML */ ` <div
+      class="border-3 border-bottom w-100 d-flex justify-content-between kuota-container"
+    >
+      <span>Kuota UKM</span>
+      <div>
+        <button type="button" class="badge border-0 kurang-kuota">-</button>
+        <span class="kuota mx-3">0</span>
+        <button type="button" class="badge border-0 tambah-kuota">+</button>
+      </div>
+    </div>`;
 
-    selectedTime.forEach((time) => {
-      time.parentElement.classList.remove("inactive");
-      time.checked = false;
+    const kurangKuota = document.querySelector(".kurang-kuota");
+    const tambahKuota = document.querySelector(".tambah-kuota");
+    let kuota = document.querySelector(".kuota");
+
+    kurangKuota.addEventListener("click", () => {
+      kuota.textContent = parseInt(kuota.textContent) - 1;
+      submitJadwalBtn.disabled = false;
     });
 
-    submitJadwalBtn.disabled = false;
+    tambahKuota.addEventListener("click", () => {
+      kuota.textContent = parseInt(kuota.textContent) + 1;
+      submitJadwalBtn.disabled = false;
+    });
   });
 }

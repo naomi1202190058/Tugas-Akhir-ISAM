@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class LpjController extends Controller
 {
     public function index() {
-        if(session()->get("role") == "ukm") {
+        if(auth()->user()->role == "ukm") {
             return view("ukm.lpj");
         } else {
             return view("ditmawa.lpj.index");
@@ -22,7 +22,7 @@ class LpjController extends Controller
         return redirect("/lpj")->with("success", "LPJ berhasil diupload");
     }
 
-    public function postLpjDetail() {
-        return redirect("/lpj/lpj-detail")->with("success", "Status LPJ berhasil diubah");
+    public function postLpjDetail(Request $request) {
+        return redirect("/lpj/lpj-detail")->with("success", ["Status LPJ berhasil diubah", $request->aksi, $request->catatan]);
     }
 }

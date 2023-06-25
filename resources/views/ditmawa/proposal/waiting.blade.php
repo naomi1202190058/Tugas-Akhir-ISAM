@@ -114,7 +114,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 d-none">
+            <div class="col-6">
               <div class="px-4 pt-4 pb-2 rounded-4 h-100" style="background-color: #F5F5F5">
                 <div class="d-flex justify-content-center">
                   <div class="d-flex">
@@ -129,79 +129,79 @@
                 <div class="time mt-4">
                   <ul>
                     <li class="inactive">
-                      <input type="checkbox" name="time" id="08:00" disabled />
+                      <input type="radio" name="time" id="08:00" />
                       <label for="08:00">08:00</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="08:30" />
+                      <input type="radio" name="time" id="08:30" />
                       <label for="08:30">08:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="09:00" />
+                      <input type="radio" name="time" id="09:00" />
                       <label for="09:00">09:00</label>
                     </li>
                     <li class="inactive">
-                      <input type="checkbox" name="time" id="09:30" disabled />
+                      <input type="radio" name="time" id="09:30" />
                       <label for="09:30">09:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="10:00" />
+                      <input type="radio" name="time" id="10:00" />
                       <label for="10:00">10:00</label>
                     </li>
                     <li class="inactive">
-                      <input type="checkbox" name="time" id="10:30" disabled />
+                      <input type="radio" name="time" id="10:30" />
                       <label for="10:30">10:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="11:00" />
+                      <input type="radio" name="time" id="11:00" />
                       <label for="11:00">11:00</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="11:30" />
+                      <input type="radio" name="time" id="11:30" />
                       <label for="11:30">11:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="12:00" />
+                      <input type="radio" name="time" id="12:00" />
                       <label for="12:00">12:00</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="12:30" />
+                      <input type="radio" name="time" id="12:30" />
                       <label for="12:30">12:30</label>
                     </li>
                     <li class="inactive">
-                      <input type="checkbox" name="time" id="13:00" disabled />
+                      <input type="radio" name="time" id="13:00" />
                       <label for="13:00">13:00</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="13:30" />
+                      <input type="radio" name="time" id="13:30" />
                       <label for="13:30">13:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="14:00" />
+                      <input type="radio" name="time" id="14:00" />
                       <label for="14:00">14:00</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="14:30" />
+                      <input type="radio" name="time" id="14:30" />
                       <label for="14:30">14:30</label>
                     </li>
                     <li class="inactive">
-                      <input type="checkbox" name="time" id="15:00" disabled />
+                      <input type="radio" name="time" id="15:00" />
                       <label for="15:00">15:00</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="15:30" />
+                      <input type="radio" name="time" id="15:30" />
                       <label for="15:30">15:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="16:00" />
+                      <input type="radio" name="time" id="16:00" />
                       <label for="16:00">16:00</label>
                     </li>
                     <li class="inactive">
-                      <input type="checkbox" name="time" id="16:30" disabled />
+                      <input type="radio" name="time" id="16:30" />
                       <label for="16:30">16:30</label>
                     </li>
                     <li>
-                      <input type="checkbox" name="time" id="17:00" />
+                      <input type="radio" name="time" id="17:00" />
                       <label for="17:00">17:00</label>
                     </li>
                   </ul>

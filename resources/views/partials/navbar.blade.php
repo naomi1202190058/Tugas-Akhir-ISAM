@@ -7,7 +7,7 @@
       <img src="/images/logo/logo.png" alt="Logo" />
     </a>
     <div class="d-flex align-items-center">
-      @if (session()->get("role") == "ukm")
+      @if (auth()->user()->role == "ukm")
         <a href="/profile" class="text-decoration-none">
           <div class="d-flex align-items-center me-5">
             <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Profile Picture" width="40px">
@@ -41,7 +41,7 @@
         <img src="/images/icons/read.png" alt="Icon" width="12px">
       </div>
     </div>
-    @if (session()->get("role") == "ukm")
+    @if (auth()->user()->role == "ukm")
       <div class="d-flex border-bottom py-2 px-3 position-relative notif-message">
         <div class="new-notif"></div>
         <div class="pt-2 pe-3">
@@ -69,7 +69,7 @@
           <img class="rounded-circle" src="/images/logo-ukm/telkom-university-esports.png" alt="Logo UKM" width="34px">
         </div>
         <div>
-          <span class="fw-semibold text-3xs">LPJ berhasil diajukan, menunggu ACC Ditmawa</span>
+          <span class="fw-semibold text-3xs">Telkom University E-sports telah mengajukan RKU baru</span>
           <span class="fw-medium text-3xs d-block pt-2" style="color: #A5ACB8">Yesterday at 11:42 PM</span>
         </div>
       </div>

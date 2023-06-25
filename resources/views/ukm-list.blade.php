@@ -4,7 +4,7 @@
   <div class="col">
     <h3 class="pt-4 pb-3 fw-semibold">Daftar UKM</h3>
   </div>
-  @if (session()->get("role") == "ditmawa")
+  @if (auth()->user()->role == "ditmawa")
     <div class="col-3 text-end me-4">
       <a href="/ukm/tambah" class="btn border-0 text-white" style="background-color: #507ca5">+ Tambah UKM Baru</a>
     </div>

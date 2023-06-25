@@ -4,6 +4,9 @@
   <div class="col">
     <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Rapor UKM</h3>
   </div>
+  <div class="col-3 text-end me-4">
+    <a href="/rapor/ukm-terbaik" class="btn border-0 text-white" style="background-color: #E2BA54"><img class="me-2" src="/images/icons/ukm-terbaik.png" alt="Icon" width="18px">UKM Terbaik</a>
+  </div>
   <div class="col-3">
     <div class="bg-white d-flex align-items-center rounded px-1">
       <input type="text" class="form-control border-0 shadow-none py-2" placeholder="Search">

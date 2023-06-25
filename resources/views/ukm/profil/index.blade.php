@@ -11,12 +11,12 @@
 
 @section('content')
   <div class="col-3 text-center">
-    <img class="mt-2 me-4 rounded-4" src="/images/logo-ukm/telu-esport.png" alt="Gambar UKM" width="80%">
+    <img class="mt-2 me-4 rounded-4" src="/images/logo-ukm/telkom-university-esports.png" alt="Gambar UKM" width="80%">
   </div>
   <div class="col-9 mt-2 profil-ukm">
     <div class="mb-3">
       <span class="mb-1 d-block text-3xs">Nama UKM</span>
-      <h6>Telkom University Esport</h6>
+      <h6>Telkom University E-Sports</h6>
     </div>
     <div class="mb-3">
       <span class="mb-1 d-block text-3xs">Jenis UKM</span>

@@ -4,6 +4,9 @@
   <div class="col-6">
     <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">FAQ</h3>
   </div>
+  <div class="col-6 text-end">
+    <a href="/faq/tambah" class="btn border-0 text-white" style="background-color: #507ca5">+ Tambah FAQ</a>
+  </div>
 @endsection
 
 @section('content')

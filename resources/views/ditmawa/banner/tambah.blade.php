@@ -2,7 +2,7 @@
 
 @section('header')
 <div class="col d-flex align-items-center">
-  <a href="/">
+  <a href="/banner">
     <img src="/images/icons/back.png" alt="Icon" width="20px">
   </a>
   <h3 class="pt-4 pb-3 fw-semibold ms-4">Edit Banner</h3>

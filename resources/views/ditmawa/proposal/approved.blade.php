@@ -114,7 +114,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 d-none">
+            <div class="col-6">
               <div class="px-4 pt-4 pb-2 rounded-4 h-100" style="background-color: #F5F5F5">
                 <div class="d-flex justify-content-center">
                   <div class="d-flex">

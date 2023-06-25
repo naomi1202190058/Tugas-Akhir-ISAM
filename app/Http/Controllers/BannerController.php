@@ -14,6 +14,14 @@ class BannerController extends Controller
         return view("ditmawa.banner.tambah");
     }
 
+    public function riwayat() {
+        return view("ditmawa.banner.riwayat");
+    }
+
+    public function postRiwayat() {
+        return redirect("/banner")->with("success", "Berhasil memulihkan banner");
+    }
+
     public function postBanner() {
         return redirect("/banner")->with("success", "Berhasil menambahkan banner");
     }
