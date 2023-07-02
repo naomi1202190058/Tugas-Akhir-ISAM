@@ -4,10 +4,8 @@
   <div class="col-6">
     <h3 class="pt-4 pb-3 fw-semibold">Proposal Kegiatan UKM</h3>
   </div>
-  <div class="col text-end" style="margin-right: -50px">
-    <button type="button" class="btn border-0" style="background-color: white" data-bs-toggle="modal" data-bs-target="#jadwalModal"><img class="me-2" src="/images/icons/jadwal.png" alt="Icon" width="18px">Edit Jadwal Presentasi</button>
-  </div>
-  <div class="col-2 text-end">
+  <div class="col-6 text-end">
+    <button type="button" class="btn border-0 me-3" style="background-color: white" data-bs-toggle="modal" data-bs-target="#jadwalModal"><img class="me-2" src="/images/icons/jadwal.png" alt="Icon" width="18px">Edit Jadwal Presentasi</button>
     <button type="button" class="btn border-0 text-white" style="background-color: #58CAF4" data-bs-toggle="modal" data-bs-target="#statistikModal"><img class="me-2" src="/images/icons/statistik.png" alt="Icon" width="18px">Lihat Statistik</button>
   </div>
 @endsection
@@ -129,7 +127,7 @@
                 <div class="time mt-4">
                   <ul>
                     <li class="inactive">
-                      <input type="radio" name="time" id="08:00" />
+                      <input type="radio" name="time" id="08:00" disabled />
                       <label for="08:00">08:00</label>
                     </li>
                     <li>
@@ -141,7 +139,7 @@
                       <label for="09:00">09:00</label>
                     </li>
                     <li class="inactive">
-                      <input type="radio" name="time" id="09:30" />
+                      <input type="radio" name="time" id="09:30" disabled />
                       <label for="09:30">09:30</label>
                     </li>
                     <li>
@@ -149,7 +147,7 @@
                       <label for="10:00">10:00</label>
                     </li>
                     <li class="inactive">
-                      <input type="radio" name="time" id="10:30" />
+                      <input type="radio" name="time" id="10:30" disabled />
                       <label for="10:30">10:30</label>
                     </li>
                     <li>
@@ -169,7 +167,7 @@
                       <label for="12:30">12:30</label>
                     </li>
                     <li class="inactive">
-                      <input type="radio" name="time" id="13:00" />
+                      <input type="radio" name="time" id="13:00" disabled />
                       <label for="13:00">13:00</label>
                     </li>
                     <li>
@@ -185,7 +183,7 @@
                       <label for="14:30">14:30</label>
                     </li>
                     <li class="inactive">
-                      <input type="radio" name="time" id="15:00" />
+                      <input type="radio" name="time" id="15:00" disabled />
                       <label for="15:00">15:00</label>
                     </li>
                     <li>
@@ -197,7 +195,7 @@
                       <label for="16:00">16:00</label>
                     </li>
                     <li class="inactive">
-                      <input type="radio" name="time" id="16:30" />
+                      <input type="radio" name="time" id="16:30" disabled />
                       <label for="16:30">16:30</label>
                     </li>
                     <li>
