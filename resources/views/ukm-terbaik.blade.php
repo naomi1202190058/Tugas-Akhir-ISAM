@@ -8,10 +8,10 @@
     <h3 class="pt-4 pb-3 fw-semibold ms-4" style="color: #5f5f5f;">Rapor UKM</h3>
   </div>
   <div class="col-6 d-flex justify-content-end">
-    <button type="button" class="btn border-0 d-flex align-items-center position-relative btn-pilih-tahun" style="background-color: #FCD980">
-      Tahun <span class="tahun ms-1">2023</span> <img src="/images/icons/chevron-right.png" alt="Icon" width="9px" class="ms-2 icon">
-      <div class="bg-white position-absolute rounded-2 w-100 d-none" style="left: 0; top: 36px">
-        <ul class="pilih-tahun rounded-2" style="overflow: hidden">
+    <button type="button" class="btn border-0 d-flex align-items-center position-relative px-3 btn-pilih-tahun" style="background-color: #FCD980">
+      Tahun <span class="tahun ms-1">2023</span> <img src="/images/icons/chevron-right.png" alt="Icon" width="9px" class="ms-3 icon">
+      <div class="bg-white position-absolute rounded-2 w-100 d-none shadow-sm" style="left: 0; top: 36px">
+        <ul class="pilih-tahun rounded-2 m-0" style="overflow: hidden">
           <li>2023</li>
           <li>2022</li>
           <li>2021</li>

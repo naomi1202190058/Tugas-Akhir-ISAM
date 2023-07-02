@@ -378,7 +378,7 @@
             <div class="d-flex justify-content-center">
               <form action="/proposal/edit-jadwal" method="post">
                 @csrf
-                <button type="submit" href="/proposal/monitoring" class="btn border-0 py-2 px-5 text-white text-3xs me-4" style="background-color: #507CA5">Ya</button>
+                <button type="submit" class="btn border-0 py-2 px-5 text-white text-3xs me-4" style="background-color: #507CA5">Ya</button>
               </form>
               <button type="button" class="btn border-0 py-2 px-5 text-white text-3xs" style="background-color: #e82e45" data-bs-toggle="modal" data-bs-target="#jadwalModal">Tidak</button>
             </div>

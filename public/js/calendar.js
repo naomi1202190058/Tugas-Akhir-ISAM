@@ -41,7 +41,6 @@ const submitJadwalBtn = document.querySelector(".submit-jadwal");
 fullDate();
 renderCalendar();
 renderFullDate();
-editJadwal();
 
 prevNext.forEach((icon) => {
   icon.addEventListener("click", () => {
@@ -57,13 +56,15 @@ prevNext.forEach((icon) => {
       date = new Date();
     }
 
+    submitJadwalBtn.disabled = true;
     renderCalendar();
     renderFullDate();
   });
 });
 
+editJadwal();
+
 function renderCalendar() {
-  const monthNow = new Date().getMonth();
   let firstDayofMonth = new Date(currentYear, currentMonth, 1).getDay();
   let lastDateofMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
   let lastDayofMonth = new Date(
@@ -118,6 +119,25 @@ function renderFullDate() {
       const times = document.querySelectorAll(
         ".time input[type='radio']:checked, .time input[type='checkbox']:checked"
       );
+      const radioDate = Array.from(
+        document.querySelectorAll(".days li input[type=radio]")
+      );
+      const radioTime = Array.from(
+        document.querySelectorAll(".time ul li input[type=radio]")
+      );
+      const elements = [...radioDate, ...radioTime];
+
+      elements.forEach((element) => {
+        element.addEventListener("click", () => {
+          if (
+            radioDate.find((date) => date.checked == true) &&
+            radioTime.find((time) => time.checked == true)
+          ) {
+            submitJadwalBtn.disabled = false;
+          }
+        });
+      });
+
       if (this.name == "date") {
         const selectedDate = this.id;
         const selectedDay = new Date(

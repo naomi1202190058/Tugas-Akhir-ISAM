@@ -20,6 +20,25 @@
 @endsection
 
 @section('content')
+  @if (auth()->user()->role == "ditmawa")
+    <div class="col-12" style="margin-top: -20px">
+      <div class="d-flex align-items-center">
+        <h5 class="pt-4 pb-3 fw-semibold me-3" style="color: #5f5f5f">Bidang UKM</h5>
+        <button type="button" class="btn border-0 d-flex align-items-center position-relative px-3 btn-pilih-tahun" style="background-color: #FCD980">
+          Semua Bidang UKM <img src="/images/icons/chevron-right.png" alt="Icon" width="9px" class="ms-3 icon">
+          <div class="bg-white rounded-2 w-100 d-none position-absolute z-3 shadow-sm" style="left: 0; top: 36px">
+            <ul class="pilih-tahun rounded-2 text-center m-0" style="overflow: hidden">
+              <li>Kesenian & Kebudayaan</li>
+              <li>Olahraga</li>
+              <li>Bidang Penalaran</li>
+              <li>Bidang Kerohanian</li>
+              <li>Bidang Sosial</li>
+            </ul>
+          </div>
+        </button>
+      </div>
+    </div>
+  @endif
   <div class="col mx-4">
     <div class="row gx-5 mb-5">
       <div>
@@ -30,7 +49,7 @@
           @continue
         @endif
         <div class="col-4 d-flex my-4">
-          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%; background-color: {{ $ukm["status_ukm"] == "aktif" ? "white" : "#d7d2d2" }}">
             <div class="card-body d-flex align-items-center">
               <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
               <div class="ms-4">
@@ -60,7 +79,7 @@
           @continue
         @endif
         <div class="col-4 d-flex my-4">
-          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%; background-color: {{ $ukm["status_ukm"] == "aktif" ? "white" : "#d7d2d2" }}">
             <div class="card-body d-flex align-items-center">
               <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
               <div class="ms-4">
@@ -86,7 +105,7 @@
           @continue
         @endif
         <div class="col-4 d-flex my-4">
-          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%; background-color: {{ $ukm["status_ukm"] == "aktif" ? "white" : "#d7d2d2" }}">
             <div class="card-body d-flex align-items-center">
               <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
               <div class="ms-4">
@@ -112,7 +131,7 @@
           @continue
         @endif
         <div class="col-4 d-flex my-4">
-          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%; background-color: {{ $ukm["status_ukm"] == "aktif" ? "white" : "#d7d2d2" }}">
             <div class="card-body d-flex align-items-center">
               <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
               <div class="ms-4">
@@ -138,7 +157,7 @@
           @continue
         @endif
         <div class="col-4 d-flex my-4">
-          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%">
+          <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%; background-color: {{ $ukm["status_ukm"] == "aktif" ? "white" : "#d7d2d2" }}">
             <div class="card-body d-flex align-items-center">
               <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
               <div class="ms-4">
@@ -194,6 +213,33 @@
               </div>
             </div>
           </div>
+          @if (auth()->user()->role == "ditmawa") 
+            <div class="row gx-5 justify-content-end">
+              <div class="col-3 d-flex justify-content-end">
+                <button type="button" class="btn border-0 d-flex align-items-center status {{ $ukmList[1]["status_ukm"] == "aktif" ? "ditolak" : "acc" }}" data-bs-toggle="modal" data-bs-target="#confirmModal"><img class="me-2" src="/images/icons/nonaktif.png" alt="Icon">{{ $ukmList[1]["status_ukm"] == "aktif" ? "Nonaktifkan" : "Aktifkan" }} UKM</button>
+              </div>
+            </div>
+          @endif
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="confirmModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal">
+      <div class="modal-content position-relative rounded-4">
+        <div class="modal-body d-flex justify-content-center align-items-center" style="height: 200px">
+          <div class="text-center">
+            <span class="fw-medium d-block mb-4">Apakah anda yakin ingin {{ $ukmList[1]["status_ukm"] == "aktif" ? "menonaktifkan" : "mengaktifkan" }} UKM?</span>
+            <div class="d-flex justify-content-center">
+              <form action="/ukm/2" method="post">
+                @method("patch")
+                @csrf
+                <button type="submit" class="btn border-0 py-2 px-5 text-white text-3xs me-4" name="status" value="{{ $ukmList[1]["status_ukm"] == "aktif" ? "nonaktif" : "aktif" }}" style="background-color: #507CA5">Ya</button>
+              </form>
+              <button type="button" class="btn border-0 py-2 px-5 text-white text-3xs" style="background-color: #e82e45" data-bs-dismiss="modal" data-bs-target="#confirmModal">Tidak</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -216,6 +262,28 @@
 @endsection
 
 @section('myscript')
+  <script>
+    const btnPilihTahun = document.querySelector(".btn-pilih-tahun");
+    const listTahun = document.querySelectorAll(".pilih-tahun li");
+    const tahunYgDipilih = document.querySelector(".tahun");
+
+    btnPilihTahun.addEventListener("click", () => {
+      btnPilihTahun.lastElementChild.classList.toggle("d-none");
+      if(document.querySelector(".icon").src == "http://127.0.0.1:8000/images/icons/chevron-right.png") {
+        document.querySelector(".icon").src = "http://127.0.0.1:8000/images/icons/chevron-down-black.png"
+        document.querySelector(".icon").setAttribute("width", "16px")
+      } else {
+        document.querySelector(".icon").src = "http://127.0.0.1:8000/images/icons/chevron-right.png"
+        document.querySelector(".icon").setAttribute("width", "9px")
+      } 
+    })
+
+    listTahun.forEach(tahun => {
+      tahun.addEventListener("click", function() {
+        tahunYgDipilih.textContent = this.textContent;
+      })
+    })
+  </script>
   <script>
     const myModal = new bootstrap.Modal(document.getElementById('success'))
     myModal.show()

@@ -78,7 +78,7 @@
     </div>
     <div class="ms-3 d-none no-contact">
       <div>
-        <img src="/images/icons/wa.png" alt="Icon" width="14px" class="m-0">
+        <img src="/images/icons/wa.png" alt="Icon" width="14px">
         <span class="text-3xs">0812374821718</span>
       </div>
       <a href="https://api.whatsapp.com/send?phone=62812374821718" class="text-white text-3xs m-0">Hubungi sekarang</a>

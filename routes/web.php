@@ -35,6 +35,7 @@ Route::get('/', [BerandaController::class, "index"])->middleware("auth");
 
 // Route UKM
 Route::get("/ukm", [UkmController::class, "index"]);
+Route::patch("/ukm/{ukm}", [UkmController::class, "editStatus"]);
 Route::get("/ukm/tambah", [UkmController::class, "tambah"]);
 Route::post("/ukm/tambah", [UkmController::class, "postUkm"]);
 

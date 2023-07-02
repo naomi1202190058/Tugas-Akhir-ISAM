@@ -344,6 +344,14 @@
 @section('myscript')
   <script src="/js/calendar.js"></script>
   <script>
+    const submitBtn = document.querySelector(".submit-jadwal");
+    const radioDate = Array.from(document.querySelectorAll(".days li input[type=radio]"));
+    const radioTime = Array.from(document.querySelectorAll(".time ul li input[type=radio]"));
+    const elements = [...radioDate, ...radioTime];
+    
+    
+  </script>
+  <script>
     const myModal = new bootstrap.Modal(document.getElementById('success'))
     myModal.show()
   </script>
