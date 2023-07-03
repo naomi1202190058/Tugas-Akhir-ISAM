@@ -34,7 +34,6 @@
           </td>
           <td>
             <span class="text-4xs">(Jadwal belum ditentukan)</span>
-            <a href="" class="d-block text-4xs jadwal-presentasi">Klik disini untuk menentukan jadwal</a>
           </td>
           <td>
             <button type="button" class="btn text-white text-3xs status aksi" data-bs-toggle="modal" data-bs-target="#aksiModal">
