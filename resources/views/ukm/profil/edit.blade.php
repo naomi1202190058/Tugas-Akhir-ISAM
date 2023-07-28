@@ -13,14 +13,21 @@
   <div class="mx-4 my-5">
     <form action="/profile/edit" method="post">
       @csrf
-      <div class="col-12 mb-4 d-flex align-items-center">
-        <img class="rounded-3 me-5 img-preview" src="/images/rku-image.png" alt="Gambar RKU"  >
-        <div class="me-3 d-none status finished">
-          <span>Uploaded</span>
-          <img class="ms-2" src="/images/icons/status/acc.png" alt="Icon" width="20px">
+      <div class="col-12 mb-4">
+        <div class="row gx-0 align-items-center">
+          <div class="col-2 me-4">
+            <img class="rounded-3 me-5 img-preview" src="/images/rku-image.png" alt="Gambar RKU"  >
+          </div>
+          <div class="col d-flex align-items-center position-relative">
+            <div class="me-3 d-none status finished">
+              <span>Uploaded</span>
+              <img class="ms-2" src="/images/icons/status/acc.png" alt="Icon" width="20px">
+            </div>
+            <button type="button" class="btn text-white upload-button"><img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">Upload Image</button>
+            <input type="file" class="d-none input-file" accept="image/*" name="image">
+            <span class="m-0 position-absolute text-3xs" style="top: 50px">JPG/PNG max 5mb</span>
+          </div>
         </div>
-        <button type="button" class="btn text-white upload-button"><img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">Upload Image</button>
-        <input type="file" class="d-none input-file" accept="image/*" name="image">
       </div>
       <div class="col-10">
         <div class="mb-3">
@@ -112,6 +119,7 @@
       </div>
       <div class="col-10">
         <label for="nama_cp" class="form-label fw-medium">Dokumen SK</label>
+        <p class="m-0 text-3xs mb-3">PDF, Max 5 mb</p>
         <div class="d-flex align-items-center">
           <button type="button" class="btn text-white me-3 d-flex align-items-center upload-button"><img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">Upload Dokumen</button>
           <input type="file" class="d-none input-file" accept=".docx, .doc, .pdf" name="dokumen">

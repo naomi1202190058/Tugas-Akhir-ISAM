@@ -58,7 +58,7 @@
           <th class="pt-4">Pelaksanaan Kegiatan</th>
           <th class="pt-4" style="width: 25%">Deadline Pengumpulan</th>
           <th class="pt-4">Dokumen LPJ</th>
-          <th class="pt-4">Aksi</th>
+          <th class="pt-4">Feedback</th>
         </tr>
       </thead>
       <tbody>
@@ -71,8 +71,7 @@
           </td>
           <td>
             <div class="d-flex align-items-center">
-              <img class="me-1" src="/images/icons/file.svg" alt="Icon" width="12px">
-              <span class="text-3xs" style="color: #7b7a7a">DOC_LPJ Kegiatan 1</span>
+              <a href="" class="text-3xs" style="color: #93B8CD"><img class="me-1" src="/images/icons/unduh-biru.png" alt="Icon" width="12px">DOC_LPJ Kegiatan 1</a>
             </div>
           </td>
           <td>
@@ -105,13 +104,12 @@
           <td class="py-4 text-3xs">Kegiatan 2</td>
           <td class="text-3xs">01 Juni 2023</td>
           <td>
-            <span class="text-4xs text-danger">Batas pengumpulan dalam</span>
-            <span class="d-block text-4xs text-secondary">(0 Hari ; 00 : 00 : 00 Jam)</span>
+            <span class="text-4xs text-secondary">Pengumpulan LPJ terlambat</span>
+            <span class="d-block text-4xs text-danger">(1 Hari ; 00 : 00 : 00 Jam)</span>
           </td>
           <td>
             <div class="d-flex align-items-center ">
-              <img class="me-1" src="/images/icons/file.svg" alt="Icon" width="12px">
-              <span class="text-3xs" style="color: #7b7a7a">DOC_LPJ Kegiatan 2</span>
+              <a href="" class="text-3xs" style="color: #93B8CD"><img class="me-1" src="/images/icons/unduh-biru.png" alt="Icon" width="12px">DOC_LPJ Kegiatan 2</a>
             </div>
           </td>
           <td>
@@ -125,13 +123,12 @@
           <td class="py-4 text-3xs">Kegiatan 3</td>
           <td class="text-3xs">15 Mei 2023</td>
           <td>
-            <span class="text-4xs text-danger">Batas pengumpulan dalam</span>
-            <span class="d-block text-4xs text-secondary">(0 Hari ; 00 : 00 : 00 Jam)</span>
+            <span class="text-4xs text-secondary">Pengumpulan LPJ terlambat</span>
+            <span class="d-block text-4xs text-danger">(1 Hari ; 00 : 00 : 00 Jam)</span>
           </td>
           <td>
             <div class="d-flex align-items-center ">
-              <img class="me-1" src="/images/icons/file.svg" alt="Icon" width="12px">
-              <span class="text-3xs" style="color: #7b7a7a">DOC_LPJ Kegiatan 3</span>
+              <a href="" class="text-3xs" style="color: #93B8CD"><img class="me-1" src="/images/icons/unduh-biru.png" alt="Icon" width="12px">DOC_LPJ Kegiatan 1</a>
             </div>
           </td>
           <td>
@@ -184,7 +181,7 @@
         <div class="row mx-4 mt-4">
           <div class="col-12">
             <div class="border-1 border-bottom d-flex justify-content-between align-items-center">
-              <h4 class="mb-4">Statistik RKU</h4>
+              <h4 class="mb-4">Statistik LPJ Tahun Akademik 2022/2023</h4>
               <button type="button" class="btn-close z-3 shadow-none mb-4" data-bs-dismiss="modal"></button>
             </div>
           </div>

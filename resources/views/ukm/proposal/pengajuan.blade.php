@@ -96,6 +96,7 @@
     </div>
     <div class="col-10">
       <label for="nama_cp" class="form-label fw-medium">Dokumen Proposal</label>
+      <p class="m-0 text-3xs mb-3">PDF, Max 5 mb</p>
       <div class="d-flex align-items-center">
         <button type="button" class="btn text-white me-3 d-flex align-items-center upload-button"><img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">Upload Dokumen</button>
         <input type="file" class="d-none input-file" accept=".docx, .doc, .pdf" name="dokumen">

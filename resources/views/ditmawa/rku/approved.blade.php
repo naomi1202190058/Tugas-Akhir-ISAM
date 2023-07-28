@@ -1,8 +1,11 @@
 @extends('layouts.tertiary')
 
 @section('header')
-  <div class="col-6">
-    <h3 class="pt-4 pb-3 fw-semibold">Rencana Kegiatan UKM</h3>
+  <div class="col-6 d-flex align-items-center">
+    <a href="/rku">
+      <img src="/images/icons/back.png" alt="Icon" width="20px">
+    </a>
+    <h3 class="pt-4 pb-3 fw-semibold ms-4">Rencana Kegiatan UKM</h3>
   </div>
   <div class="col-6 text-end">
     <button type="button" class="btn border-0 text-white" style="background-color: #58CAF4" data-bs-toggle="modal" data-bs-target="#statistikModal"><img class="me-2" src="/images/icons/statistik.png" alt="Icon" width="18px">Lihat Statistik</button>
@@ -17,7 +20,6 @@
           <th class="pt-4">Nama UKM</th>
           <th class="pt-4">Nama Kegiatan</th>
           <th class="pt-4" style="width: 20%">Detail Kegiatan</th>
-          <th class="pt-4" style="width: 10%">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -27,12 +29,6 @@
           <td>
             <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 1</a>
           </td>
-          <td>
-            <button type="button" class="btn text-white text-3xs status acc" data-bs-toggle="modal" data-bs-target="#statusModal">
-              <img class="me-2" src="/images/icons/status/acc.png" alt="Icon" width="20px">
-              ACC
-            </button>
-          </td>
         </tr>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Telkom University E-sports</td>
@@ -40,24 +36,12 @@
           <td>
             <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 2</a>
           </td>
-          <td>
-            <button type="button" class="btn text-white text-3xs status acc" data-bs-toggle="modal" data-bs-target="#statusModal">
-              <img class="me-2" src="/images/icons/status/acc.png" alt="Icon" width="20px">
-              ACC
-            </button>
-          </td>
         </tr>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Telkom University E-sports</td>
           <td class="py-4 text-3xs">Tournament Mobile Legends</td>
           <td>
             <a class="text-3xs me-5 d-flex align-items-center" href="" style="color: #93B8CD"><img src="/images/icons/unduh-biru.png" class="me-2" alt="Icon" width="12px">DOC_Detail_Kegiatan 3</a>
-          </td>
-          <td>
-            <button type="button" class="btn text-white text-3xs status acc" data-bs-toggle="modal" data-bs-target="#statusModal">
-              <img class="me-2" src="/images/icons/status/acc.png" alt="Icon" width="20px">
-              ACC
-            </button>
           </td>
         </tr>
       </tbody>
@@ -120,7 +104,7 @@
         <div class="row mx-4 mt-4">
           <div class="col-12">
             <div class="border-1 border-bottom d-flex justify-content-between align-items-center">
-              <h4 class="mb-4">Statistik RKU</h4>
+              <h4 class="mb-4">Statistik RKU Tahun Akademik 2022/2023</h4>
               <button type="button" class="btn-close z-3 shadow-none mb-4" data-bs-dismiss="modal"></button>
             </div>
           </div>

@@ -12,10 +12,10 @@
       <thead>
         <tr style="color: rgba(37, 37, 37, 0.87);">
           <th class="pt-4" style="width: 30%">Nama Kegiatan</th>
-          <th class="pt-4" style="width: 25%">Dokumen Proposal</th>
+          <th class="pt-4" style="width: 23%">Dokumen Proposal</th>
           <th class="pt-4" >Jadwal Presentasi</th>
           <th class="pt-4" style="width: 17%">Status Proposal</th>
-          <th class="pt-4 text-center" style="width: 5%">Aksi</th>
+          <th class="pt-4 text-center">Feedback</th>
         </tr>
       </thead>
       <tbody>

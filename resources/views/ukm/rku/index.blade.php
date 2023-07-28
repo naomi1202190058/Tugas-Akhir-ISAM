@@ -16,7 +16,7 @@
         <tr style="color: rgba(37, 37, 37, 0.87);">
           <th colspan="2" class="pt-4 pb-2">Nama Kegiatan</th>
           <th style="width: 22%" class="pt-4 pb-2">Status</th>
-          <th style="width: 10%" class="pt-4 pb-2 text-center">Aksi</th>
+          <th style="width: 10%" class="pt-4 pb-2 text-center">Feedback</th>
         </tr>
       </thead>
       <tbody>

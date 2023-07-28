@@ -24,6 +24,7 @@
         </div>
         <div class="mb-3">
           <label for="nama_cp" class="form-label fw-medium d-block">Image Banner</label>
+          <p class="m-0 text-3xs mb-3">JPG, PNG (728 x 90px)</p>
           <img class="d-none mt-1 mb-3 img-preview" alt="Banner Preview" style="width: 100%; height: 100%;">
           <button type="button" class="btn text-white upload-button"><img class="me-2" src="/images/icons/upload-dokumen.png" alt="Icon" width="20px">Upload Image</button>
           <input type="file" class="d-none input-file" accept="image/*" name="image">

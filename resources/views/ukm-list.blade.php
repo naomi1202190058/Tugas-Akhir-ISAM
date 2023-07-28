@@ -50,7 +50,10 @@
         @endif
         <div class="col-4 d-flex my-4">
           <div class="card border-0 position-relative ps-2 pe-3 py-2" style="width: 100%; background-color: {{ $ukm["status_ukm"] == "aktif" ? "white" : "#d7d2d2" }}">
-            <div class="card-body d-flex align-items-center">
+            <div class="card-body d-flex align-items-center position-relative">
+              @if ($ukm["status_ukm"] == "nonaktif")
+                <span class='position-absolute text-3xs fw-medium non-aktif'>Non Aktif</span>
+              @endif
               <img src="/images/logo-ukm/{{ $ukm["logo_ukm"] != null ? $ukm["logo_ukm"] : "no-logo.png" }}" alt="Gambar UKM" width="130px" height="130px">
               <div class="ms-4">
                 <span class="d-block mb-1">Nama UKM</span>

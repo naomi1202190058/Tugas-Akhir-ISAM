@@ -2,7 +2,7 @@
 
 @section('header')
   <div class="col">
-    <h3 class="pt-4 pb-3 fw-semibold">LPJ</h3>
+    <h3 class="pt-4 pb-3 fw-semibold">Laporan Pertanggungjawaban UKM</h3>
   </div>
   <div class="col-3 text-end">
     <div class="bg-white d-flex align-items-center rounded px-1">

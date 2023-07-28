@@ -1,11 +1,8 @@
 @extends('layouts.primary')
 
 @section('header')
-  <div class="col d-flex align-items-center">
-    <a href="/rapor">
-      <img src="/images/icons/back.png" alt="Icon" width="20px">
-    </a>
-    <h3 class="pt-4 pb-3 fw-semibold ms-4" style="color: #5f5f5f;">Rapor UKM</h3>
+  <div class="col">
+    <h3 class="pt-4 pb-3 fw-semibold">Rencana Kegiatan UKM</h3>
   </div>
   <div class="col-3">
     <div class="bg-white d-flex align-items-center rounded px-1">

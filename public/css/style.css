@@ -598,3 +598,9 @@ input[type="checkbox"] + label,
 .tambah-kuota {
   background-color: #54ad46;
 }
+
+.non-aktif {
+  color: #e82e45 !important;
+  top: 3px;
+  right: 2px;
+}

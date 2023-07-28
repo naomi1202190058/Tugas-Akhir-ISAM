@@ -2,7 +2,7 @@
 
 @section('header')
   <div class="col">
-    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">LPJ</h3>
+    <h3 class="pt-4 pb-3 fw-semibold" style="color: #5f5f5f;">Laporan Pertanggungjawaban UKM</h3>
   </div>
 @endsection
 
@@ -11,16 +11,18 @@
     <table class="table table-borderless align-middle">
       <thead>
         <tr style="color: rgba(37, 37, 37, 0.87);">
-          <th class="pt-4" style="width: 30%">Nama Kegiatan</th>
-          <th class="pt-4" style="width: 25%">Deadline Pengumpulan</th>
+          <th class="pt-4" style="width: 22%">Nama Kegiatan</th>
+          <th class="pt-4">Pelaksanaan Kegiatan</th>
+          <th class="pt-4" style="width: 18%">Deadline Pengumpulan</th>
           <th class="pt-4">Dokumen LPJ</th>
           <th class="pt-4" style="width: 17%">Status LPJ</th>
-          <th class="pt-4 text-center" style="width: 5%">Aksi</th>
+          <th class="pt-4 text-center" style="width: 8%">Feedback</th>
         </tr>
       </thead>
       <tbody>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Kegiatan 1</td>
+          <td class="text-4xs">15 Juni 2023</td>
           <td>
             <span class="text-4xs text-danger">Batas pengumpulan dalam</span>
             <span class="d-block text-4xs text-warning">(13 Hari ; 12 : 01 : 00 Jam)</span>
@@ -45,9 +47,10 @@
         </tr>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Kegiatan 2</td>
+          <td class="text-4xs">01 Juni 2023</td>
           <td>
-            <span class="text-4xs text-danger">Batas pengumpulan dalam</span>
-            <span class="d-block text-4xs text-secondary">(0 Hari ; 00 : 00 : 00 Jam)</span>
+            <span class="text-4xs text-secondary">Pengumpulan LPJ terlambat</span>
+            <span class="d-block text-4xs text-danger">(1 Hari ; 00 : 00 : 00 Jam)</span>
           </td>
           <td>
             <div class="d-flex align-items-center ">
@@ -69,9 +72,10 @@
         </tr>
         <tr class="border-bottom">
           <td class="py-4 text-3xs">Kegiatan 3</td>
+          <td class="text-4xs">15 Mei 2023</td>
           <td>
-            <span class="text-4xs text-danger">Batas pengumpulan dalam</span>
-            <span class="d-block text-4xs text-secondary">(0 Hari ; 00 : 00 : 00 Jam)</span>
+            <span class="text-4xs text-secondary">Batas pengumpulan dalam</span>
+            <span class="d-block text-4xs text-danger">(1 Hari ; 00 : 00 : 00 Jam)</span>
           </td>
           <td>
             <div class="d-flex align-items-center ">
@@ -102,6 +106,7 @@
         <div class="modal-body mt-4 mb-2 mx-2">
           <div class="text-center">
             <span class="fw-medium d-block mb-4">Upload dokumen LPJ</span>
+            <p class="m-0 text-3xs mb-3">PDF, Max 5 mb</p>
             <div class="d-flex align-items-center justify-content-center d-none upload-dokumen">
               <img class="me-1" src="/images/icons/file.svg" alt="Icon" width="12px">
               <span class="text-3xs" style="color: #7b7a7a"></span>
